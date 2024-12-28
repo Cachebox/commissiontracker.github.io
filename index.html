@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSC Login</title>
+</head>
+<body>
+    <h1>Welcome to the Regulatory Standards Commission</h1>
+    <button id="login-btn">Login with Roblox</button>
+    <script>
+        const clientId = '8625000414069022120'; // Replace with your actual Roblox OAuth client ID
+        const redirectUri = 'http://127.0.0.1:8090/_/'; // 
+
+        document.getElementById('login-btn').addEventListener('click', () => {
+            const authUrl = `https://apis.roblox.com/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=openid`;
+            window.location.href = authUrl;
+        });
+    </script>
+</body>
+</html>
